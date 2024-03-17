@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Results</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:insert="navbar">
+
+</nav>
+
+<div class="container">
+    <h1 class="mt-5 mb-4">Student Exam Results</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Exam</th>
+            <th>Marks</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s : ${students}" th:style="${s.exam < 50 ? 'color:red' : 'color:black' }">
+            <td th:text="${s.id}">1</td>
+            <td th:text="${s.name}">John</td>
+            <td th:text="${s.surname}">Doe</td>
+            <td th:text="${s.exam}">85</td>
+            <td th:text="${s.mark}" >A</td>
+        </tr>
+
+        <!-- Add more rows for additional students -->
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
