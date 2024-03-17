@@ -18,7 +18,7 @@ public class MainController {
     StudentService studentService = new StudentService();
 
     @GetMapping("/")
-    public String home(Model model){
+    public String home(Model model) {
         List<Student> students = studentService.getSortedStudents();
 
         model.addAttribute("students", students);
@@ -27,13 +27,13 @@ public class MainController {
     }
 
     @GetMapping("/AddStudent")
-    public String addStudent_get(Model model){
+    public String addStudent_get(Model model) {
 
         return "addStudent";
     }
 
     @PostMapping("/AddStudent")
-    public String addStudent_post(Student student){
+    public String addStudent_post(Student student) {
         studentService.addStudent(student);
 
 

@@ -20,30 +20,27 @@ public class StudentService {
     }
 
 
-    public  Student addStudent(Student student){
+    public Student addStudent(Student student) {
 
         int exam = student.getExam();
 
-        if(exam >= 90){
+        if (exam >= 90) {
             student.setMark("A");
         } else if (75 <= exam) {
             student.setMark("B");
 
-        }else if (60 <= exam) {
+        } else if (60 <= exam) {
             student.setMark("C");
 
-        }else if (50 <= exam) {
+        } else if (50 <= exam) {
             student.setMark("D");
-        }else{
+        } else {
             student.setMark("F");
         }
 
 
         return studentRepository.save(student);
     }
-
-
-
 
 
 }

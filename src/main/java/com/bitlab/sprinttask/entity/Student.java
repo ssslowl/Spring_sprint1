@@ -27,11 +27,10 @@ public class Student {
     private String mark;
 
 
-
-    public String isExamLow(){
-        if(this.exam < 50){
+    public String isExamLow() {
+        if (this.exam < 50) {
             return "red";
-        }else{
+        } else {
             return "black";
         }
 
